@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="<?php echo SITE_ROOT?>/Layout/css/one.css">	
+
+E:/xampp/htdocs/prj2
+
+<script type="text/javascript">
+        $( function(){
+            $('#key-search').keyup(function(){
+                var medicine_search = $('#key-search').val();
+                $.post('https://localhost/prj2/Ajax/search_medicine', {medicine: medicine_search}, function(data){
+                    $('.table').html(data); 
+                });       
+            })
+        })
+    </script>
+
+e.preventDefault(); // ngăn không submit form luôn.
+
+
+Nguồn crawl: 24h, zingnews, VNExpress, VTVNews, Báo Lao Động, Báo Nhân Dân, Vietnamnet, Sức khỏe đời sống, Tuổi trẻ, Thanh niên
+
+session username , 
+session is_staff ,
+session position
+
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here. For example:
+	// config.language = 'fr';
+	// config.uiColor = '#AADC6E';
+	config.filebrowserBrowseUrl = './ckeditor/ckfinder/ckfinder.html';
+    config.filebrowserImageBrowseUrl = './ckeditor/ckfinder/ckfinder.html?type=Images';
+    config.filebrowserFlashBrowseUrl = './ckeditor/ckfinder/ckfinder.html?type=Flash';
+    config.filebrowserUploadUrl = './ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+    config.filebrowserImageUploadUrl = './ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+    config.filebrowserFlashUploadUrl = './ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
+};
+
+$config['authentication'] = function () {
+    return true;
+};
+
+###################################################### POST CONTROL MODEL
+<?php 
+$category = $_GET['category'];
+switch ($category) {
+    case 'medicine1':
+        $title = 1;
+        break;
+    default :
+        $title = 'no way';
+        break;
+}
+echo $title;
+
+$.post('https://localhost/prj2/Model/Login_SignupModel.php', {})
+

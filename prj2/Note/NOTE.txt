@@ -1,0 +1,160 @@
+<link rel="stylesheet" type="text/css" href="<?php echo SITE_ROOT?>/Layout/css/one.css">	
+
+E:/xampp/htdocs/prj2
+
+public function __construct(){
+if ((!isset($_SESSION['username']))||((!isset($_SESSION['position'])))){
+header('Location: http://localhost/prj2/');
+}
+}
+
+
+
+
+Nguồn crawl: 24h, zingnews, VNExpress, VTVNews, Báo Lao Động, Báo Nhân Dân, Vietnamnet, Sức khỏe đời sống, Tuổi trẻ, Thanh niên
+
+session username , 
+session is_staff ,
+session position
+
+CKEDITOR.editorConfig = function( config ) {
+// Define changes to default configuration here. For example:
+// config.language = 'fr';
+// config.uiColor = '#AADC6E';
+config.filebrowserBrowseUrl = './ckeditor/ckfinder/ckfinder.html';
+config.filebrowserImageBrowseUrl = './ckeditor/ckfinder/ckfinder.html?type=Images';
+config.filebrowserFlashBrowseUrl = './ckeditor/ckfinder/ckfinder.html?type=Flash';
+config.filebrowserUploadUrl = './ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+config.filebrowserImageUploadUrl = './ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+config.filebrowserFlashUploadUrl = './ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
+};
+
+$config['authentication'] = function () {
+return true;
+};
+
+###################################################### POST CONTROL MODEL
+<?php 
+$category = $_GET['category'];
+switch ($category) {
+case 'medicine1':
+$title = 1;
+break;
+default :
+$title = 'no way';
+break;
+}
+echo $title;
+
+$.post('https://localhost/prj2/Model/Login_SignupModel.php', {})
+
+
+public function CountPost(){
+$qr=" select max(no) from postcontrol1 ";
+$res=pg_query($this->connect,$qr); 
+$row=pg_fetch_array($res);
+$max=$row["max"];
+return $max;
+}
+
+public function Count_Page_max(){
+$qr=" select max(no) from post_general ";
+$res=pg_query($this->connect,$qr);
+$row=pg_fetch_array($res);
+$max=$row["max"];
+$mod=$max%4;
+if($mod){
+$final=($max-$mod)/4+1;
+}else{
+$final=$max/4;
+}
+return $final;
+}
+
+public function StartEnd($page_index,$post_max,$page_max){
+$res=array();
+if($page_index==$page_max){
+$res["start"]=$post_max%4;
+$res["end"]=1;
+}else{
+$res["start"]=$post_max-($page_index-1)*4;
+$res["end"]=$res["start"]-3;
+}
+return $res;
+}
+
+public function Page_unit_data($no_start,$no_end){
+$save=array();
+for($no=$no_start;$no>=$no_end;$no--){
+$qr=" select title_short,img,heading_short from post_general where no='$no' ";
+$res=pg_query($this->connect,$qr);
+$save["$no"]=pg_fetch_array($res);
+}
+return $save;
+}
+
+public function addPost($title_short,$heading_short){#******************************************
+$qr=" select max(no) from post9 ";
+$res=pg_query($this->connect,$qr);
+$row=pg_fetch_array($res);
+$id=$row["max"]+1;
+$qr=" insert into post9(id,title_short,heading_short) values ('$id','$title_short','$heading_short') ";
+$res=pg_query($this->connect,$qr);
+}
+
+
+<script>
+
+$( function(){
+$('.delete').click(function(){
+if (confirm('ban co muon xoa khong?')){
+
+}
+else{
+return false;
+}
+})
+
+$('#key-search').keyup(function(){
+var key_search = $('#key-search').val();
+$.post('<?php echo SITE_ROOT?>/View/search/search-key.php', {res: key_search}, function(res){
+$('.table').html(res);  
+})
+})
+})
+</script>
+
+
+
+
+<div class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <a href="index.html" class="footer-logo">R<span>ul</span>ler Ho<span>spi</span>tal</a>
+                        <h3>Quận Hoàn Kiếm, Hà Nội, Việt Nam</h3>
+                        <div class="footer-menu">
+                            <p>+012 345 67890</p>
+                            <p>ruller@gmail.com</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Sinh Viên : Đào Hải Long</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>MSSV : 20183788</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

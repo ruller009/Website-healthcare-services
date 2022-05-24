@@ -1,0 +1,83 @@
+/* TÙY CHỈNH HEADER_GUEST */
+*{
+
+	margin: 0px;
+}
+#header-guest{
+	
+	width: 100%;
+	height: 4.375rem;
+}
+
+.header-guest-container{
+	background: #5CDB95;
+	height: 4.375rem;
+	border-bottom: 2px solid #379683;
+}
+/*header-logo-home*/
+.header-logo-home{
+	float: left;
+	display: inline;		
+	height: 4.375rem;
+}
+.header-logo-image{
+	height: 4.375rem;
+}
+/*header-guest-icon*/
+.header-guest-icon a{
+	margin: 20px; 
+}
+.header-guest-icon a i{
+	margin-right: 5px;
+}
+.header-guest-icon-text{
+	margin-left: 30px;
+	color: #05386B;
+}
+/* header_guest_choice */
+.header-guest-choice{
+	float: left;
+	height: 4.375rem;
+	margin-left: 30px;
+}
+.header-guest-choice-container-text{
+	margin-left: 30px;
+	color: #05386B;
+}
+.header-guest-choice-ul{
+	display: block;
+}
+.header-guest-choice-ul li{
+	list-style: none;
+	display: inline-block;
+	margin-bottom: 0px;
+}
+.header-guest-choice li a{
+	text-decoration: none;
+	margin-right: 30px;
+	border-left: 1px solid #EDF5E1;
+}
+/*header-login*/
+
+.header-login{
+	float: left;
+	height: 4.375rem;
+	margin-left: 5px;	
+}
+.header-login-container{
+	
+	margin-top: 1.6rem;
+}
+.header-login-container a{
+	margin-left: 40px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #379683;
+}
+/*header-account*/
+.header-account-container{
+	margin-top: 1.6rem;	
+}
+.header-account-part1{
+	float: left;
+}

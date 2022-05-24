@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php?url=$1
+
+
+ErrorDocument 403 "<meta http-equiv='refresh' content='3; url=https://localhost/prj2/'/>"
+ErrorDocument 404 "<meta http-equiv='refresh' content='3; url=https://localhost/prj2/'/>"

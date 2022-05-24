@@ -1,0 +1,114 @@
+create table post_general(
+no serial,
+category varchar(20),
+id varchar(20),
+title_short varchar(50),
+img varchar not null ,
+heading_short varchar(50)
+);
+
+create table post_detail(
+category varchar(20)
+id varchar(20),
+title varchar(300) not null,
+time varchar(50) ,
+heading varchar(400) not null,
+content1 text not null,
+img1 varchar(300) not null,
+content2 text ,
+img2 varchar(300) ,
+content3 text ,
+img3 varchar(300) ,
+content4 text ,
+img4 varchar(300)
+);
+
+create table general_crawl(
+link varchar(100),
+title varchar(100),
+img varchar(200),
+heading text,
+time varchar(50)
+)
+
+public function addPost($title_short,$heading_short){
+$qr=" select max(no) from post9 ";
+$res=pg_query($this->connect,$qr);
+$row=pg_fetch_array($res);
+$id=$row["max"]+1;
+$qr=" insert into post9(id,title_short,heading_short) values ('$id','$title_short','$heading_short') ";
+$res=pg_query($this->connect,$qr);
+}
+
+insert into staff values ('giamdoc','Trần Giám Đốc', 'anhlaso1', '20/11/2021',
+'Hòa Bình, Việt Nam', '0123456789', 'giamdoc@gmail.com'
+'5', 'http://localhost/prj2/Layout/images/staff.png' ,
+'Việt Nam',
+'Hôm nay có cuộc họp quan trọng với bộ trưởng')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="http://localhost/prj2/" class="navbar-brand">R<span>ul</span>ler Ho<span>spi</span>tal</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="http://localhost/prj2/News" class="nav-item nav-link active">News</a>
+
+                        <div class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Diseases</a>
+                            <div class="dropdown-menu">
+                                <a href="https://localhost/prj2/ShowPost/Basic/diseases1" class="dropdown-item">Bệnh nhiễm trùng</a>
+                                <a href="https://localhost/prj2/ShowPost/Basic/diseases2" class="dropdown-item">Bệnh nội tiết</a>
+                                <a href="https://localhost/prj2/ShowPost/Basic/diseases3" class="dropdown-item">Bệnh tâm thần</a>
+                                <a href="https://localhost/prj2/ShowPost/Basic/diseases4" class="dropdown-item">Bệnh hô hấp</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Medicine</a>
+                            <div class="dropdown-menu">
+                                <a href="https://localhost/prj2/ShowPost/Basic/medicine1" class="dropdown-item">Thuốc tây y</a>
+                                <a href="https://localhost/prj2/ShowPost/Basic/medicine2" class="dropdown-item">Thuốc đông y</a>
+                                <a href="https://localhost/prj2/ShowPost/Basic/medicine3" class="dropdown-item">Thực phẩm chức năng</a>
+                            </div>
+                        </div>
+
+                        <a href="https://localhost/prj2/ShowPost/Basic/research" class="nav-item nav-link">Science Research</a>
+                        
+                        <div class="nav-item dropdown">
+                            <a href="http://localhost/prj2/Search" class="nav-link dropdown-toggle" data-toggle="dropdown">Search</a>
+                            <div class="dropdown-menu">
+                                <a href="https://localhost/prj2/Search/clinic_search" class="dropdown-item">Clinic</a>
+                                <a href="https://localhost/prj2/Search/doctor_search" class="dropdown-item">Doctor</a>
+                                <a href="https://localhost/prj2/Search/medicine_search" class="dropdown-item">Medicine</a>
+                            </div>
+                        </div>
+                        
+                        <?php 
+                            if (isset($_SESSION['username'])){
+                                require_once('E:/xampp/htdocs/prj2/View/unit/user-nav-View.php');
+                            }
+                            else{
+                                require_once('E:/xampp/htdocs/prj2/View/unit/guest-nav-View.php');
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>

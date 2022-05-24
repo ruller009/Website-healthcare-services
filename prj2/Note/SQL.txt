@@ -1,0 +1,112 @@
+create table customer(
+	customer_username varchar(50) primary key,
+	customer_name varchar(50),
+	password varchar(500),
+	date_of_birth varchar(20),
+	address varchar(50),
+	phone varchar(20),
+	email varchar(20),
+	img_profile varchar(500),
+	facebook varchar(200),
+	career varchar(50),
+	nationality varchar(20),
+	note text
+);
+
+create table staff(
+	staff_username varchar(50) primary key,
+	staff_name varchar(50),
+	password varchar(50) ,
+	date_of_birth varchar(20),
+	address varchar(100),
+	phone varchar(20),
+	email varchar(50),
+	position varchar(20),
+	img_profile varchar(400),
+	nationality varchar(20),
+	note text
+);
+
+
+create table medicine_search(
+	medicine_name varchar(20) primary key,
+	medicine_code varchar(50) not null,
+	medicine_image varchar(300),
+	medicine_group varchar(20),
+	medicine_type varchar(20),
+	medicine_id varchar(20),
+	ingredient text,
+	impact text,
+	instruction text
+)
+
+create table clinic(
+	clinic_name varchar(50) primary key,
+	clinic_code varchar(50) not null,
+	clinic_image varchar(300),
+	clinic_address varchar(50),
+	clinic_contact varchar(50),
+	clinic_type varchar(50),
+	review text
+)
+
+create table doctor(
+	doctor_name varchar(20) primary key,
+	doctor_code varchar(50) not null,
+	doctor_image varchar(300),
+	specialist varchar(50),
+	doctor_contact varchar(20),
+	agency varchar(100)
+)
+
+create table announcement(
+	no serial,
+	announcement text
+)
+
+create table medicine1(
+	no int,
+	id int,
+	title text,
+	heading text,
+	image varchar(300),
+	post_content text
+)
+
+create table email(
+	email varchar(50),
+	message text
+)
+
+create table news_general(
+	no serial,
+	id serial,
+	short_title text,
+	short_heading text,
+	intro_img varchar(400)
+);
+
+create table news_detail(
+	id serial,
+	title text,
+	heading text,
+	time varchar(300),
+	content1 text,
+	img1 varchar(400),
+	content2 text,
+	img2 varchar(400),
+	content3 text,
+	img3 varchar(400),
+	content4 text,
+	img4 varchar(400),
+	content5 text,
+	img5 varchar(400),
+	content6 text,
+	img6 varchar(400),
+	content7 text,
+	img7 varchar(400),
+	content8 text,
+	img8 varchar(400),
+	content9 text,
+	img9 varchar(400)
+)

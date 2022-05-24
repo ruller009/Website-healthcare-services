@@ -1,0 +1,15 @@
+.member-container{
+	width: 1100px;
+	margin-left: 100px;
+	height: 500px;
+}
+.member-slidebar{
+	background: blue;
+	height: 500px;
+	float: left;
+	width: 200px;
+}
+.member-display{
+	background: red;
+	height: 500px;
+}
